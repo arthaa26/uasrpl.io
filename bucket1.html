@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket 1 Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color:black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #bucket-details {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .bucket-image {
+            flex: 1 1 40%;
+            text-align: center;
+        }
+
+        .bucket-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .bucket-description {
+            flex: 1 1 60%;
+            padding: 20px;
+        }
+
+        .bucket-description h2 {
+            margin-top: 0;
+        }
+
+        .bucket-description h3 {
+            color:black;
+        }
+
+        .order-section {
+            flex: 1 1 100%;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .order-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order-form label {
+            margin: 10px 0 5px;
+        }
+
+        .order-form input,
+        .order-form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .order-form textarea {
+            resize: vertical;
+        }
+
+        .order-form .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .order-form .quantity button {
+            background-color:black;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .order-form .quantity input {
+            text-align: center;
+            width: 50px;
+            margin: 0 5px;
+        }
+
+        .order-form button[type="submit"] {
+            background-color:black;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .order-form button[type="submit"]:hover {
+            background-color: #e55b50;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bucket 1 Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="bucket-details">
+        <div class="bucket-image">
+            <img src="img/bucket1.png" alt="Beautiful Flower 1">
+        </div>
+        <div class="bucket-description">
+            <h2>Bucket 1</h2>
+            <p>Bucket 1 adalah koleksi bunga yang cerah dan mempesona. Dengan paduan warna yang hangat dan sentuhan plastik yang menyala, bucket ini membawa keceriaan dan kehangatan ke setiap sudut ruangan.</p>
+            <h3>Rp. 120.000,00</h3>
+        </div>
+        <div class="order-section">
+            <h3>Order Now</h3>
+            <form class="order-form" action="order_confirmation.html" method="post">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="whatsapp">Nomor WhatsApp:</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required>                
+                
+                <label for="address">Alamat:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="quantity">Jumlah:</label>
+                <div class="quantity">
+                    <button type="button" onclick="decreaseQuantity()">-</button>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    <button type="button" onclick="increaseQuantity()">+</button>
+                </div>
+                
+                <label for="message">Special Order:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                
+                <button type="submit">Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bucket Bunga. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function increaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function decreaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+    </script>
+
+    <script>
+        // Bagian lain dari kode ...
+    
+        document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            var formData = new FormData(event.target);
+            var jsonData = {};
+            formData.forEach((value, key) => jsonData[key] = value);
+    
+            fetch('http://localhost:3000/send-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert('Pesanan berhasil ditempatkan'); // Tampilkan pop-up konfirmasi
+                window.location.href = 'index.html'; // Kembali ke halaman utama setelah pesanan berhasil
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+    
+</body>
+</html>

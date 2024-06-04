@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bucket Bunga</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login_register_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Login to Win Bucket</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="login">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="login_process.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bucket Bunga. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/artha.lawar" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/6282150036778" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/artha.26/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <button class="whatsapp-btn" onclick="openWhatsApp()">WhatsApp</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
